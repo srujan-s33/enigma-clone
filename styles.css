@@ -1,0 +1,627 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: smaller;
+    padding: 3px 8px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    color: #ffffff7b
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Fix for the hero section with the new navbar color */
+.hero {
+    padding-top: 80px;
+    height: 100vh;
+    background-image: url('assests/background-img.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 180px;
+    font-weight: 400;
+    letter-spacing: 20px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #ccc;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* About Section Styles */
+.about {
+    padding: 80px 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section-title {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 60px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.quote {
+    flex: 1;
+    padding-right: 30px;
+    max-width: 400px;
+}
+
+.quote p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.author {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #777;
+    display: block;
+}
+
+.about-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+}
+
+.text-block p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #777;
+    margin-bottom: 0;
+}
+
+.highlight {
+    font-weight: 600;
+    color: #000;
+}
+
+.events .section-title{
+    text-align: center;
+}
+
+.space1{
+    height: 100px;
+    width: 100%;
+}
+
+/* Events Section Styles */
+.events {
+    padding: 80px 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.event-tabs {
+    margin-top: 40px;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 15px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.tab-btn.active {
+    color: #000;
+}
+
+.tab-btn.active::after {
+    width: 100%;
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.event-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.event-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+}
+
+/* Ensure the event quotes and text blocks match the about section styling */
+.events .quote p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.events .text-block p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #777;
+    margin-bottom: 0;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-image: url('assests/bg-2.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* This creates the parallax effect */
+    background-position: center;
+    padding: 40px 0;
+    position: relative;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.main-container {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+/* Image Container Styles */
+.image-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-section {
+    display: none;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.image-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.image-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.image-row img {
+    width: 23%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Container Styles */
+.text-container {
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.text-section {
+    display: none;
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.text-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.testimonials .section-title {
+    font-family: 'Dosis', sans-serif;
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.testimonial-quote p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.testimonial-quote .author {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #ccc;
+}
+
+/* Slider Dots Styles */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.image-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+.text-dots {
+    margin-top: 30px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 80px 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon {
+    font-size: 18px;
+    color: #000;
+}
+
+.contact-detail h3 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.contact-detail p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover svg {
+    fill: #000;
+}
+
+.contact-form {
+    flex: 2;
+    max-width: 600px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #999;
+}
+
+.submit-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000;
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo img {
+    height: 90px;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.footer-copyright {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.footer-love {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
